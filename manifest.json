@@ -2,7 +2,7 @@
     "manifest_version": 2,
 
     "name": "Comment Seeker",
-    "description": "Display Reddit posts about a webpage.",
+    "description": "Finds social media threads about any webpage.",
 
     "version": "1.0",
 
