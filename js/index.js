@@ -4,9 +4,9 @@ var redditAPI = "http://www.reddit.com/api/info.json"; //Link to the reddit API
 function getLinks(url, successFunc, errorFunc)
 {
     var timeout = 5000; //In milliseconds
-    var limit = 8; //Maximum number of results
+    var limit = 100; //Maximum number of results, 100 is max
     
-    $.ajax({
+    $.ajax({ //Perform the AJAX request
 	"type": "GET",
 	"dataType": "json",
 	"url": redditAPI,
@@ -17,10 +17,13 @@ function getLinks(url, successFunc, errorFunc)
     });
 }
 
-//If the request was successful, 
+//If the request was successful
 function onSuccess(data, textStatus, jqXHR)
 {
-    console.log(data);
+    var maxShown = 10; //Maximum number of links shown to the user
+
+    
+    console.log(data); //DEBUG
 
     var links = data["data"]["children"]    
     var linkLength = links.length;
@@ -31,8 +34,10 @@ function onSuccess(data, textStatus, jqXHR)
     }
 
     else
-    {    
-	for(var i = 0; i < linkLength; i++)
+    {
+	links.sort(function(post){ return post["data"]["num_comments"] + post["data"]["score"]/10000; }); //Sort by comments first, then score
+	
+	for(var i = 0; i < linkLength && i < maxShown; i++)
 	{
 	    var permalink = links[i]["data"]["permalink"];
 	    var title = links[i]["data"]["title"];
