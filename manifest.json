@@ -1,13 +1,14 @@
 {
     "manifest_version": 2,
 
-    "name": "Comment seeker",
-    "description": "Chrome extension that displays Reddit posts about a given webpage.",
+    "name": "Comment Seeker",
+    "description": "Display Reddit posts about a webpage.",
 
     "version": "1.0",
 
     "permissions": [
-	"http://www.reddit.com/"
+	"http://www.reddit.com/",
+	"tabs"
     ],
 
     "browser_action": {
