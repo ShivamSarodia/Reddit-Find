@@ -5,7 +5,6 @@ var doGet = function(url, responseFn)
     xhr.onreadystatechange = function()
     {
 	if (xhr.readyState == 4){
-    	    console.log(xhr);
 	    responseFn(xhr.responseText);
 	}
 	else

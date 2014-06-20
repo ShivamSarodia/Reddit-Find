@@ -4,7 +4,6 @@ var ThreadFinder = {
     
     loadThreads: function(url)
     {
-	var numThreads = 0; //Number of threads in total
 	var numQueries = 0; //Number of queries sent out; used to determine when loading is done
 	var rlist=document.getElementById("results");
 	for (k in this.siteQueriers)
@@ -14,7 +13,6 @@ var ThreadFinder = {
 	    this.siteQueriers[k].query(url, function(rlts) {
 		for (r in rlts)
 		{
-		    numThreads += 1;
 		    l=rlts[r];
 		    var i = document.createElement("li");
 		    i.innerHTML = "<a href='"+l["link"]+"'>" + l["title"] + "</a>";
@@ -23,22 +21,25 @@ var ThreadFinder = {
 
 		if (--numQueries == 0) //Once we finished the last query, be done
 		{
-		    that.afterLoad(numThreads);
+		    that.afterLoad();
 		}
 	    });
 	}
     },
 
-    afterLoad: function(numThreads)
+    afterLoad: function()
     {
 	var results = document.getElementById("results").getElementsByTagName("a")
-	if (numThreads == 0)
+	var textDiv = document.getElementById("loading");
+	
+	if (results.length == 0) //If there's no threads
 	{
-	    var rlist=document.getElementById("results");
-	    rlist.innerHTML = "No threads";
+	    textDiv.innerHTML = "No threads";
 	}
-	else
+	
+	else //If there are threads
 	{
+	    textDiv.style.display = "none";
 	    for (var i = 0; i < results.length; i++)
 	    {
 		results[i].addEventListener("click", onLinkClick);
