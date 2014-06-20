@@ -1,4 +1,44 @@
 body
 {
-    min-width: 400px;
+    font-family: Arial;
+    min-width: 450px;
 }
+
+a
+{
+    font-size: 11pt;
+}
+
+#results
+{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+#results li
+{
+    padding-top: 10px;
+    border-top: 1px solid #CFCFCF
+}
+
+.details-cont
+{
+    text-align: justify;
+    width: 100%;
+}
+
+.details-cont:after
+{
+    content: '';
+    width: 100%;
+    display: inline-block;
+}
+
+.details
+{
+    font-size: 9pt;
+    color: gray;
+    font-weight: bold;
+    display: inline-block
+}
+

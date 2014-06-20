@@ -9,18 +9,28 @@ var redditQuery = {
 
 	for (i in o.data.children)
 	{
+
+	    var strTimeAgo = moment.unix(o.data.children[i].data.created_utc).fromNow();
+	    if(strTimeAgo.charAt(0) == "a")
+	    {
+		    strTimeAgo = "1" + strTimeAgo.slice(1);
+	    }
+	    
 	    var threadInfo = {
 		"title": o.data.children[i].data.title,
 		"link": "http://www.reddit.com" + o.data.children[i].data.permalink,
-		"score": o.data.children[i].data.score,
-		"num_comments": o.data.children[i].data.num_comments,
-		"subreddit": o.data.children[i].data.subreddit,
-		"author": o.data.children[i].data.author
+		"score": o.data.children[i].data.score + " points",
+		"raw_num_comments":  o.data.children[i].data.num_comments,
+		"num_comments": o.data.children[i].data.num_comments + " comments",
+		"subreddit": "/r/" + o.data.children[i].data.subreddit,
+		"author": o.data.children[i].data.author,
+		"timeago": strTimeAgo,
+		"date": moment.unix(o.data.children[i].data.created_utc).format("l")
 	    }
 	    rtn.push(threadInfo);
 	}
 
-	rtn.sort(function(a, b) { return b["num_comments"] - a["num_comments"];	}); //Sort by number of comments
+	rtn.sort(function(a, b) { return b["raw_num_comments"] - a["raw_num_comments"];	}); //Sort by number of comments
 	return rtn.slice(0, maxNum);
     },
 
