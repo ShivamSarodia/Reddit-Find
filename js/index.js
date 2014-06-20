@@ -5,6 +5,7 @@ var doGet = function(url, responseFn)
     xhr.onreadystatechange = function()
     {
 	if (xhr.readyState == 4){
+    	    console.log(xhr);
 	    responseFn(xhr.responseText);
 	}
 	else
@@ -29,6 +30,15 @@ var doAct = function()
 	    ThreadFinder.loadThreads(url);
 	}
    });
+}
+
+var onLinkClick = function()
+{
+    chrome.tabs.create({
+	"url": this.href,
+	"active": true
+    });
+    return false;
 }
 
 document.addEventListener('DOMContentLoaded', doAct);

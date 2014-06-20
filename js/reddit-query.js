@@ -1,7 +1,9 @@
 var redditQuery = {
+    maxNum : 10, // Maximum number of threads to show
+    
     searchTemplateURL : "http://www.reddit.com/api/info.json?url=%u&limit=100", //Consider changing the limit?
 
-    parseResponse: function(response) {
+    parseResponse: function(response, maxNum) {
 	var rtn = [];
 	var o = JSON.parse(response);
 
@@ -18,16 +20,19 @@ var redditQuery = {
 	    rtn.push(threadInfo);
 	}
 
-	return rtn;
+	rtn.sort(function(a, b) { return b["num_comments"] - a["num_comments"];	}); //Sort by number of comments
+	return rtn.slice(0, maxNum);
     },
 
     //URL to search for, callback is a function that takes a list of objects
     query: function(url, callback) {
 	cb = callback;
 	parser = this.parseResponse;
+	maxNum = this.maxNum;
+	console.log(this);
 	doGet(this.searchTemplateURL.replace("%u", encodeURIComponent(url)),
 	      function(response) {
-		  cb(parser(response));
+		  cb(parser(response, maxNum));
 	      });
     }
 }
