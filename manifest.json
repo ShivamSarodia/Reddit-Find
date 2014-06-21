@@ -12,8 +12,11 @@
     ],
 
     "page_action": {
-	"default_icon": "img/icon.png",
-	"default_title": "Comment Seeker"
+	"default_icon": {
+            "19": "img/icon_small.png",
+            "38": "img/icon_big.png"
+        },
+	"default_title": "Click to view threads"
     },
 
     "background": {
