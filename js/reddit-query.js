@@ -39,7 +39,6 @@ var redditQuery = {
 	cb = callback;
 	parser = this.parseResponse;
 	maxNum = this.maxNum;
-	console.log(this);
 	doGet(this.searchTemplateURL.replace("%u", encodeURIComponent(url)),
 	      function(response) {
 		  cb(parser(response, maxNum));

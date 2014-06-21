@@ -2,7 +2,7 @@ var ThreadFinder = {
 
     siteQueriers : {"Reddit": redditQuery}, // just the one querier for now
 
-    htmlTemplate : "<a href='%url'>%title</a><div class='details-cont'><span class='details'>%d1</span> <span class='details'>%d2</span> <span class='details'>%d3</span> <span class='details' title='%d5'>%d4</span></div>",
+    htmlTemplate : "<a target='_blank' href='%url'>%title</a><div class='details-cont'><span class='details'>%d1</span> <span class='details'>%d2</span> <span class='details'>%d3</span> <span class='details' title='%d5'>%d4</span></div>",
     outElement : null,
     
     search: function(url, foundThreads, noThreads)
