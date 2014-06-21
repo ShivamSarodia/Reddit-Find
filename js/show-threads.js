@@ -31,7 +31,6 @@ var ThreadFinder = {
 			.replace("%d5", l["date"]);		    
 
 		    rlist.appendChild(i); 
-		    
 		}
 
 		if (--numQueries == 0) //Once we finished the last query, be done
