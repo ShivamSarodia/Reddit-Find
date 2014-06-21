@@ -7,12 +7,33 @@
     "version": "1.0",
 
     "permissions": [
-	"http://www.reddit.com/",
+	"<all_urls>",
 	"tabs"
     ],
 
-    "browser_action": {
+    "page_action": {
 	"default_icon": "img/icon.png",
-	"default_popup": "html/index.html"
-    }
+	"default_title": "Comment Seeker"
+    },
+
+    "background": {
+	"scripts": ["js/background.js"],
+	"persistent": false
+    },
+
+    "content_scripts": [
+	{
+	    "matches": [
+		"http://*/*",
+		"https://*/*"
+	    ],
+	    "js": ["js/moment.min.js",
+		   "js/reddit-query.js",
+		   "js/search-threads.js",
+		   "js/contentScript.js"
+		  ],
+	    "css": ["css/index.css"],
+	    "run_at": "document_start"
+	}
+    ]
 }

@@ -3,21 +3,29 @@ var ThreadFinder = {
     siteQueriers : {"Reddit": redditQuery}, // just the one querier for now
 
     htmlTemplate : "<a href='%url'>%title</a><div class='details-cont'><span class='details'>%d1</span> <span class='details'>%d2</span> <span class='details'>%d3</span> <span class='details' title='%d5'>%d4</span></div>",
+    outElement : null,
     
-    loadThreads: function(url)
+    search: function(url, foundThreads, noThreads)
     {
+	var that = this;
+	
+	var numThreads = 0; //Number of threads found
 	var numQueries = 0; //Number of queries sent out; used to determine when loading is done
-	
-	var rlist=document.getElementById("results");
-	
-	for (k in this.siteQueriers)
-	{
+
+	that.outElement = document.createElement("div");
+	that.outElement.id = "comment-seeker-div";
+	var child = document.createElement("ul");
+	child.id = "results";	
+
+	for (k in that.siteQueriers)
+	{    
 	    numQueries += 1;
-	    var that = this;
 	    
-	    this.siteQueriers[k].query(url, function(rlts) {
+	    that.siteQueriers[k].query(url, function(rlts) {
 		for (r in rlts)
 		{
+		    numThreads += 1;
+		    
 		    i = document.createElement("li");
 		    
 		    l=rlts[r];
@@ -30,34 +38,24 @@ var ThreadFinder = {
 			.replace("%d4", l["timeago"])
 			.replace("%d5", l["date"]);		    
 
-		    rlist.appendChild(i); 
+		    child.appendChild(i); 
 		}
 
 		if (--numQueries == 0) //Once we finished the last query, be done
 		{
-		    that.afterLoad();
+		    if (numThreads == 0) //If there's no threads
+		    {
+			noThreads();
+		    }
+		    
+		    else //If there are threads
+		    {
+			console.log(that.numThreads);
+			that.outElement.appendChild(child);
+			foundThreads(that.outElement)
+		    }
 		}
 	    });
 	}
-    },
-
-    afterLoad: function()
-    {
-	var results = document.getElementById("results").getElementsByTagName("a")
-	var textDiv = document.getElementById("loading");
-	
-	if (results.length == 0) //If there's no threads
-	{
-	    textDiv.innerHTML = "No threads";
-	}
-	
-	else //If there are threads
-	{
-	    textDiv.style.display = "none";
-	    for (var i = 0; i < results.length; i++)
-	    {
-		results[i].addEventListener("click", onLinkClick);
-	    }
-	}	
     }
 }
