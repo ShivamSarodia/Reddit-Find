@@ -52,7 +52,7 @@ var ThreadFinder = {
 		    else //If there are threads
 		    {
 			that.outElement.appendChild(child);
-			foundThreads(that.outElement)
+			foundThreads(that.outElement);
 		    }
 		}
 	    });

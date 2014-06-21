@@ -31,11 +31,18 @@ var doAct = function()
 		       );
 }
 
+var closeListener = function(event) {
+    var el = document.getElementById("comment-seeker-div");
+    event.target.removeEventListener("click", closeListener);
+    el.parentNode.removeChild(el);
+}
+
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
 	if(request = "showThreads")
 	{
-	    document.body.appendChild(threads);
+	    document.body.appendChild(threads);	    
+	    document.getElementById("com-seek-close-button").addEventListener("click", closeListener)
 	}
     }
 );

@@ -56,8 +56,10 @@
     float: left !important;
 
     margin-top: -8px !important;
-    font-size: 17px;
-    font-weight: bold;
+    font-size: 17px !important;
+    font-weight: bold !important;
+
+    color: rgba(0,0,0,0.65) !important;
 }
 
 #comment-seeker-div #results li #com-seek-close-button {
@@ -68,6 +70,7 @@
     background-image: url('chrome-extension://__MSG_@@extension_id__/img/x.png') !important;
     background-size: 100% !important;
 
+    opacity: 0.48 !important;
     margin-top: -6px !important;
 }
 
