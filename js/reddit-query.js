@@ -1,5 +1,5 @@
 var redditQuery = {
-    maxNum : 10, // Maximum number of threads to show
+    maxNum : 15, // Maximum number of threads to show
     
     searchTemplateURL : "http://www.reddit.com/api/info.json?url=%u&limit=100", //Consider changing the limit?
 

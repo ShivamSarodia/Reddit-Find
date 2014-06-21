@@ -1,10 +1,20 @@
-#comment-seeker-div {
-    font-family: Arial;
-    font-size: 11pt;
-    width: 400px;
-    line-height: normal;
-    background-image: url('chrome-extension://__MSG_@@extension_id__/img/background.png');
+/*
+/* TO ANY POOR SOUL READING THIS STYLESHEET:
+/*
+/* I truly apologize for the sad state of this CSS. The injected DOM
+/* elements are subject to the CSS of the host webpage, so I have to
+/* do a variety of strange things to accomodate as many host webpages
+/* as possible.
+/*
+*/
 
+#comment-seeker-div {
+    font-family: Arial !important;
+    font-size: 11pt !important;
+    line-height: normal !important;
+
+    width: 400px;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/img/background.png');
     position: fixed;
     top: 0;
     bottom: 0;
@@ -12,13 +22,13 @@
     background-color: #CFCFCF;
     z-index: 9999999999;
 
-    padding-top: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    padding-left: 20px;
+    padding-top: 15px !important;
+    padding-right: 15px !important;
+    padding-bottom: 15px !important;
+    padding-left: 20px !important;
 
     box-shadow: -5px 0px 3px 1px rgba(0,0,0,0.3);
-    overflow-y: auto;
+    overflow-y: auto !important;
 }
 
 #comment-seeker-div #results {
@@ -29,6 +39,9 @@
 }
 
 #comment-seeker-div #results li {
+    font-size: 11pt !important;
+    font-family: Arial !important;
+    line-height: normal !important;
     text-align: left !important;
     padding-top: 7px !important;
     border-top: 1px solid #CFCFCF !important;
@@ -39,35 +52,58 @@
     border-top: none !important;
 }
 
-#comment-seeker-div a {
+#comment-seeker-div #results li #com-seek-title {
+    float: left !important;
+
+    margin-top: -8px !important;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#comment-seeker-div #results li #com-seek-close-button {
+    float: right !important;
+    height: 15px !important;
+    width: 15px !important;
+
+    background-image: url('chrome-extension://__MSG_@@extension_id__/img/x.png') !important;
+    background-size: 100% !important;
+
+    margin-top: -6px !important;
+}
+
+#comment-seeker-div #results li a {
+    font-family: Arial !important;
     font-size: 11pt !important;
+    line-height: normal !important;
     color: #07c !important;
     text-decoration: none !important;
     text-align: left !important;
 }
 
-#comment-seeker-div a:hover {
+#comment-seeker-div #results li a:hover {
     text-decoration: underline !important;
 }
 
-#comment-seeker-div .details-cont {
-    text-align: justify;
-    width: 100%;
+#comment-seeker-div #results li .details-cont {
+    text-align: justify !important;
+    width: 100% !important;
 
-    font-size: 0pt; /* Eliminate space of :after */
-    margin-top: 2px;
-    margin-bottom: 8px;
+    font-size: 0pt !important; /* Eliminate space of :after */
+    margin-top: 2px !important;
+    margin-bottom: 8px !important;
 }
 
-#comment-seeker-div .details-cont:after {
-    content: '';
-    width: 100%;
-    display: inline-block;
+#comment-seeker-div #results li .details-cont:after {
+    content: '' !important;
+    width: 100% !important;
+    display: inline-block !important;
 }
 
-#comment-seeker-div .details {
-    font-size: 9pt;
-    color: gray;
-    font-weight: bold;
-    display: inline-block
+#comment-seeker-div #results li .details {
+    font-family: Arial !important;
+    font-size: 9pt !important;
+    line-height: normal !important;
+    color: gray !important;
+    font-weight: bold !important;
+    display: inline-block !important;
 }

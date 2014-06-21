@@ -15,7 +15,8 @@ var ThreadFinder = {
 	that.outElement = document.createElement("div");
 	that.outElement.id = "comment-seeker-div";
 	var child = document.createElement("ul");
-	child.id = "results";	
+	child.id = "results";
+	child.innerHTML = "<li>&nbsp;<div id='com-seek-title'>Comment Seeker</div><div id='com-seek-close-button'></div></li>";
 
 	for (k in that.siteQueriers)
 	{    
@@ -50,7 +51,6 @@ var ThreadFinder = {
 		    
 		    else //If there are threads
 		    {
-			console.log(that.numThreads);
 			that.outElement.appendChild(child);
 			foundThreads(that.outElement)
 		    }
