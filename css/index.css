@@ -31,14 +31,14 @@
     overflow-y: auto !important;
 }
 
-#comment-seeker-div #results {
+#comment-seeker-div #com-seek-results {
     list-style-type: none !important;
     
     padding: 0px !important;
     margin: 0px !important;
 }
 
-#comment-seeker-div #results li {
+#comment-seeker-div #com-seek-results li {
     font-size: 11pt !important;
     font-family: Arial !important;
     line-height: normal !important;
@@ -55,12 +55,12 @@
     background: none !important;
 }
 
-#comment-seeker-div #results li:first-of-type {
+#comment-seeker-div #com-seek-results li:first-of-type {
     padding-top: 0px !important;
     border-top: none !important;
 }
 
-#comment-seeker-div #results li #com-seek-title {
+#comment-seeker-div #com-seek-results li #com-seek-title {
     float: left !important;
 
     margin-top: -8px !important;
@@ -72,7 +72,7 @@
     color: rgba(0,0,0,0.65) !important;
 }
 
-#comment-seeker-div #results li #com-seek-close-button {
+#comment-seeker-div #com-seek-results li #com-seek-close-button {
     float: right !important;
     height: 15px !important;
     width: 15px !important;
@@ -86,7 +86,45 @@
     margin-top: -6px !important;
 }
 
-#comment-seeker-div #results li a {
+#comment-seeker-div #com-seek-results li #com-seek-no-threads {
+    text-align: center !important;
+    margin-top: 80% !important;
+    font-size: 16pt !important;
+    font-weight: bold !important;
+    color: rgba(0,0,0,0.65) !important;
+}
+
+#comment-seeker-div #com-seek-results li #com-seek-domain-button-nt {
+    border: 2px solid rgba(100,100,100,0.3) !important;
+    text-align: center !important;
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+    margin-top: 20px !important;
+    line-height: 30px !important;
+    font-size: 12pt !important;
+    font-weight: bold !important;
+    background: rgb(211, 211, 211) !important;
+    color: rgba(41,41,41, 0.8) !important;
+    border-radius: 100px !important;
+}
+
+#comment-seeker-div #com-seek-domain-button-t {
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    width: 400px;
+    border-top: 2px solid rgba(100,100,100,0.3);
+    border-right: 2px solid rgba(100,100,100,0.3);
+    background: rgb(235, 235, 235);
+    font-size: 12pt;
+    font-weight: bold;
+    line-height: 50px;
+    width: 435px;
+    margin-left: -20px;
+    color: rgb(41,41,41,0.8);
+}
+
+#comment-seeker-div #com-seek-results li a {
     font-family: Arial !important;
     font-size: 11pt !important;
     line-height: normal !important;
@@ -95,11 +133,11 @@
     text-align: left !important;
 }
 
-#comment-seeker-div #results li a:hover {
+#comment-seeker-div #com-seek-results li a:hover {
     text-decoration: underline !important;
 }
 
-#comment-seeker-div #results li .details-cont {
+#comment-seeker-div #com-seek-results li .details-cont {
     text-align: justify !important;
     width: 100% !important;
 
@@ -108,13 +146,13 @@
     margin-bottom: 8px !important;
 }
 
-#comment-seeker-div #results li .details-cont:after {
+#comment-seeker-div #com-seek-results li .details-cont:after {
     content: '' !important;
     width: 100% !important;
     display: inline-block !important;
 }
 
-#comment-seeker-div #results li .details {
+#comment-seeker-div #com-seek-results li .details {
     font-family: Arial !important;
     font-size: 9pt !important;
     line-height: normal !important;

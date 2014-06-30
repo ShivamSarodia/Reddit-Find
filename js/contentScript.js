@@ -17,31 +17,39 @@ var doGet = function(url, responseFn)
 
 /////////////////////////////////////////////
 
-var threads = null;
+var DOMel = ""; //store the DOM element for later, when we display it
+var showingPanel = false;
 
 var doAct = function()
 {
     var url = location.href.split("#")[0]; // strip the anchor link if it exists
-    ThreadFinder.search(url,
-			function(t) {
-			    threads = t;
-			    chrome.runtime.sendMessage("showIcon");
-			},
-			function() {}
-		       );
+    ThreadSearcher.searchPage(url,
+			      function(object, foundThreads) {
+				  
+				  DOMel = object;
+				  
+				  if(foundThreads) {
+				      chrome.runtime.sendMessage("activateIcon");
+				  }
+				  
+			      }
+			     );
 }
 
 var closeListener = function(event) {
     var el = document.getElementById("comment-seeker-div");
     event.target.removeEventListener("click", closeListener);
     el.parentNode.removeChild(el);
+    showingPanel = false;
 }
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-	if(request = "showThreads")
+	console.log(showingPanel);
+	if(request = "showPanel" && !showingPanel)
 	{
-	    document.body.appendChild(threads);	    
+	    document.body.appendChild(DOMel);
+	    showingPanel = true;
 	    document.getElementById("com-seek-close-button").addEventListener("click", closeListener)
 	}
     }

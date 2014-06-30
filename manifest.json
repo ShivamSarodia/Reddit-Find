@@ -11,10 +11,10 @@
 	"tabs"
     ],
 
-    "page_action": {
+    "browser_action": {
 	"default_icon": {
-            "19": "img/icon_small.png",
-            "38": "img/icon_big.png"
+            "19": "img/icon_inactive_small.png",
+            "38": "img/icon_inactive_big.png"
         },
 	"default_title": "Click to view threads"
     },
@@ -31,9 +31,9 @@
 		"https://*/*"
 	    ],
 	    "js": ["js/moment.min.js",
-		   "js/reddit-query.js",
-		   "js/search-threads.js",
-		   "js/contentScript.js"
+		   "js/templateengine.js",
+		   "js/searchthreads.js",
+		   "js/contentscript.js"
 		  ],
 	    "css": ["css/index.css"],
 	    "run_at": "document_start"
@@ -41,6 +41,7 @@
     ],
 
     "web_accessible_resources": [
-	"img/*"
+	"img/*",
+	"html/templates.html"
     ]
 }
