@@ -2,6 +2,7 @@ chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
 	if (request == "activateIcon")
 	{
+	    
 	    chrome.browserAction.setIcon(
 		{
 		    "path": {

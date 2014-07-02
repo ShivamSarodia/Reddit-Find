@@ -33,9 +33,13 @@
 
 #comment-seeker-div #com-seek-results {
     list-style-type: none !important;
+    list-style-image: none !important;
     
     padding: 0px !important;
-    margin: 0px !important;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-bottom:23px !important;
 }
 
 #comment-seeker-div #com-seek-results li {
@@ -84,6 +88,8 @@
 
     opacity: 0.48 !important;
     margin-top: -6px !important;
+
+    cursor: pointer !important;
 }
 
 #comment-seeker-div #com-seek-results li #com-seek-no-threads {
@@ -106,22 +112,38 @@
     background: rgb(211, 211, 211) !important;
     color: rgba(41,41,41, 0.8) !important;
     border-radius: 100px !important;
+    cursor: pointer !important;
+}
+
+#comment-seeker-div #com-seek-domain-bottom {
+    position: fixed !important;
+    bottom: 0px !important;
+    text-align: center !important;
+    width: 400px !important;
+    border-top: 2px solid rgba(100,100,100,0.25) !important;
+    border-right: 2px solid rgba(100,100,100,0.25) !important;
+    background: rgb(245, 245, 245) !important;
+    font-size: 11pt !important;
+    font-weight: bold !important;
+    width: 435px !important;
+    margin-left: -20px !important;
+    color: rgb(41,41,41,0.6) !important;
 }
 
 #comment-seeker-div #com-seek-domain-button-t {
-    position: fixed;
-    bottom: 0px;
-    text-align: center;
-    width: 400px;
-    border-top: 2px solid rgba(100,100,100,0.3);
-    border-right: 2px solid rgba(100,100,100,0.3);
-    background: rgb(235, 235, 235);
-    font-size: 12pt;
-    font-weight: bold;
-    line-height: 50px;
-    width: 435px;
-    margin-left: -20px;
-    color: rgb(41,41,41,0.8);
+    border: 2px solid rgba(100,100,100,0.3) !important;
+    text-align: center !important;
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    line-height: 30px !important;
+    font-size: 11pt !important;
+    font-weight: bold !important;
+    background: rgb(231, 231, 231) !important;
+    color: rgba(41,41,41, 0.8) !important;
+    border-radius: 100px !important;
+    cursor: pointer !important;
 }
 
 #comment-seeker-div #com-seek-results li a {
@@ -131,6 +153,7 @@
     color: #07c !important;
     text-decoration: none !important;
     text-align: left !important;
+    font-weight: normal !important;
 }
 
 #comment-seeker-div #com-seek-results li a:hover {
