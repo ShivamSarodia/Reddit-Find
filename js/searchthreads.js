@@ -4,12 +4,13 @@ var ThreadSearcher = {
 
     searchPageURL : "http://www.reddit.com/api/info.json?url=%u&limit=100",
     searchDomainURL : "http://www.reddit.com/search.json?q=site:%u&sort=comments&limit=25",
-    
-    searchPage : function(url, callback)
+
+    search: function(domainFlag, url, callback)
     {
 	var that = this;
 
-	doGet(this.searchPageURL.replace("%u", encodeURIComponent(url)),
+	queryURL = domainFlag ? that.searchDomainURL : that.searchPageURL;
+	doGet(queryURL.replace("%u", encodeURIComponent(url)),
 	      function(response) {
 		  var threadList = that.parseResponse(response);
 
@@ -43,30 +44,24 @@ var ThreadSearcher = {
 			  
 		      }
 
-		      returnObject.appendChild(TemplateEngine.gen("search-domain-button"));
+		      if(!domainFlag)
+		      {
+			  returnObject.appendChild(TemplateEngine.gen("search-domain-button"));
+		      }
 		      
 		      callback(returnObject, true);
 		  }		  
 	      });
     },
+    
+    searchPage : function(url, callback)
+    {
+	this.search(false, url, callback);
+    },
 
     searchSite : function(domain, callback)
     {
-	var that = this;
-
-	doGet(this.searchDomainURL.replace("%u", encodeURIComponent(domain)),
-	      function(response) {
-		  var threadList = that.parseResponse(response);
-
-		  if (threadList.length == 0)
-		  {
-		      callback(undefined, false);
-		  }
-		  else
-		  {
-		      //Do HTML stuff
-		  }
-	      });
+	this.search(true, domain, callback);
     },
 
     parseResponse : function(response, callback)

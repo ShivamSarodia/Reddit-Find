@@ -2,9 +2,9 @@
 /* TO ANY POOR SOUL READING THIS STYLESHEET:
 /*
 /* I truly apologize for the sad state of this CSS. The injected DOM
-/* elements are subject to the CSS of the host webpage, so I have to
+/* elements are subject to the styles of the host webpage, so I have to
 /* do a variety of strange things to accomodate as many host webpages
-/* as possible.
+/* as possible. Also, I don't like CSS enough to write this more neatly.
 /*
 */
 
@@ -39,7 +39,7 @@
     margin-top: 0px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
-    margin-bottom:23px !important;
+    margin-bottom:42px !important;
 }
 
 #comment-seeker-div #com-seek-results li {
