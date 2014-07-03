@@ -1,20 +1,29 @@
-var DOMel = ""; //store the DOM element for later, when we display it
-var showingPanel = false;
-
-var doAct = function()
+var doGet = function(url, responseFn) //Not really an event, but whatever
 {
-    var url = location.href.split("#")[0]; // strip the anchor link if it exists
-    ThreadSearcher.searchPage(url,
-			      function(object, foundThreads) {
-				  
-				  DOMel = object;
-				  
-				  if(foundThreads) {
-				      chrome.runtime.sendMessage("activateIcon");
-				  }
-				  
-			      }
-			     );
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function()
+    {
+	if (xhr.readyState == 4){
+	    responseFn(xhr.responseText);
+	}
+	else
+	{
+	    //console.log("Ready state changed");
+	}
+    } 
+    xhr.send();
 }
 
-doAct();
+var url = location.href.split("#")[0]; // strip the anchor link if it exists
+ThreadSearcher.searchPage(url,
+			  function(object, foundThreads) {
+			      
+			      PanelManager.domElement = object;
+			      
+			      if(foundThreads) {
+				  chrome.runtime.sendMessage("activateIcon");
+			      }
+			      
+			  }
+			 );

@@ -23,7 +23,7 @@ var TemplateEngine = {
     },
 
     //Generates a DOM element from a template
-    gen: function(templateName, data) { 
+    gen: function(templateName, data) {	
 	var that = this;
 
 	var outString = that.templates[templateName];

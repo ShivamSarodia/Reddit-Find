@@ -100,7 +100,7 @@
     color: rgba(0,0,0,0.65) !important;
 }
 
-#comment-seeker-div #com-seek-results li #com-seek-domain-button-nt {
+#comment-seeker-div #com-seek-results li #com-seek-domain-button-nt-d, #comment-seeker-div #com-seek-results li #com-seek-domain-button-nt-p {
     border: 2px solid rgba(100,100,100,0.3) !important;
     text-align: center !important;
     margin-left: 20% !important;
@@ -130,7 +130,7 @@
     color: rgb(41,41,41,0.6) !important;
 }
 
-#comment-seeker-div #com-seek-domain-button-t {
+#comment-seeker-div #com-seek-domain-button-t-d, #comment-seeker-div #com-seek-domain-button-t-p {
     border: 2px solid rgba(100,100,100,0.3) !important;
     text-align: center !important;
     margin-left: 20% !important;

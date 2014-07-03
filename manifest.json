@@ -33,6 +33,7 @@
 	    "js": ["js/moment.min.js",
 		   "js/templateengine.js",
 		   "js/searchthreads.js",
+		   "js/panel.js",
 		   "js/contentscript.js"
 		  ],
 	    "css": ["css/index.css"],

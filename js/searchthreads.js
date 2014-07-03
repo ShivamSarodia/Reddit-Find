@@ -13,17 +13,22 @@ var ThreadSearcher = {
 	doGet(queryURL.replace("%u", encodeURIComponent(url)),
 	      function(response) {
 		  var threadList = that.parseResponse(response);
-
+		  var buttonText = domainFlag ? "this page" : "entire domain";
+		  var headerText = domainFlag ? " - Domain" : "";
+		  
 		  if (threadList.length == 0)
 		  {
-		      var returnObject = TemplateEngine.gen("panel");
-		      
-		      returnObject.getElementsByTagName("ul")[0].appendChild(TemplateEngine.gen("no-threads"));
+		      var returnObject = TemplateEngine.gen("panel", {"d1":headerText});
+		      returnObject.getElementsByTagName("ul")[0].appendChild(TemplateEngine.gen("no-threads",
+												{
+												    "d1": buttonText,
+												    "d2": (domainFlag ? "-p":"-d")
+												}));
 		      callback(returnObject, false);
 		  }
 		  else
 		  {
-		      var returnObject = TemplateEngine.gen("panel");
+		      var returnObject = TemplateEngine.gen("panel", {"d1":headerText});
 
 		      for (i = 0; i < threadList.length; i++)
 		      {
@@ -44,11 +49,12 @@ var ThreadSearcher = {
 			  
 		      }
 
-		      if(!domainFlag)
-		      {
-			  returnObject.appendChild(TemplateEngine.gen("search-domain-button"));
-		      }
-		      
+		      returnObject.appendChild(TemplateEngine.gen("search-domain-button",
+								  {
+								      "d1": buttonText,
+								      "d2": (domainFlag ? "-p": "-d")
+								  }));
+		      		      
 		      callback(returnObject, true);
 		  }		  
 	      });
