@@ -1,8 +1,9 @@
 {
     "manifest_version": 2,
 
-    "name": "Comment Seeker",
-    "description": "Finds social media threads about any webpage.",
+    "name": "Reddit Find",
+    "description": "Finds the reddit comment threads for any website.",
+    "author": "Shivam Sarodia",
 
     "version": "1.0",
 

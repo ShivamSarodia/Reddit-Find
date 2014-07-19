@@ -49,7 +49,7 @@
     text-align: left !important;
     padding-top: 7px !important;
     border-top: 1px solid #CFCFCF !important;
-
+    
     padding-left: 0px !important;
     padding-right: 0px !important;
     padding-bottom: 0px !important;
@@ -57,6 +57,9 @@
     margin: 0px !important;
 
     background: none !important;
+
+    list-style-type: none !important;
+    list-style-image: none !important;
 }
 
 #comment-seeker-div #com-seek-results li:first-of-type {
