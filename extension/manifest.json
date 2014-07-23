@@ -5,7 +5,7 @@
     "description": "Find the reddit comment threads for any website.",
     "author": "Shivam Sarodia",
 
-    "version": "1.0.2",
+    "version": "1.0.3",
 
     "permissions": [
 	"<all_urls>",
