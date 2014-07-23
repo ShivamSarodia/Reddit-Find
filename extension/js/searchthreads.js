@@ -2,8 +2,8 @@ var ThreadSearcher = {
 
     maxNum : 30, //Maximum number of threads to show
 
-    searchPageURL : "http://www.reddit.com/api/info.json?url=%u&limit=100",
-    searchDomainURL : "http://www.reddit.com/search.json?q=site:%u&sort=comments&limit=25",
+    searchPageURL : "https://pay.reddit.com/api/info.json?url=%u&limit=100",
+    searchDomainURL : "https://pay.reddit.com/search.json?q=site:%u&sort=comments&limit=25",
 
     search: function(domainFlag, url, callback)
     {
