@@ -6,4 +6,5 @@ Reddit Find is a lightweight extension indicating the presence of comment thread
 Inspired by [this](http://www.reddit.com/r/SomebodyMakeThis/comments/289trx/a_browser_extension_that_sucks_comments_from/) reddit thread.
 
 Chrome Web Store - [coming soon]
+
 reddit - http://www.reddit.com/r/RedditFind
