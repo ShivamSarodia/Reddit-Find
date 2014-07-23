@@ -118,6 +118,25 @@
     cursor: pointer !important;
 }
 
+#comment-seeker-div #com-seek-results li #com-seek-post-button {
+    border: 2px solid rgba(100,100,100,0.3) !important;
+    text-align: center !important;
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+    margin-top: 7px !important;
+    line-height: 30px !important;
+    font-size: 12pt !important;
+    font-weight: bold !important;
+    background: rgb(211, 211, 211) !important;
+    color: rgba(41,41,41, 0.8) !important;
+    border-radius: 100px !important;
+    cursor: pointer !important;
+}
+
+#comment-seeker-div #com-seek-results li #com-seek-post-button-a:hover { 
+    text-decoration: none !important;
+}
+
 #comment-seeker-div #com-seek-domain-bottom {
     position: fixed !important;
     bottom: 0px !important;

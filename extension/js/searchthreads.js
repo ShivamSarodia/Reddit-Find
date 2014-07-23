@@ -22,7 +22,8 @@ var ThreadSearcher = {
 		      returnObject.getElementsByTagName("ul")[0].appendChild(TemplateEngine.gen("no-threads",
 												{
 												    "d1": buttonText,
-												    "d2": (domainFlag ? "-p":"-d")
+												    "d2": (domainFlag ? "-p":"-d"),
+												    "d3": encodeURIComponent(url)
 												}));
 		      callback(returnObject, false);
 		  }
