@@ -1,6 +1,9 @@
-Comment-Seeker
+Reddit-Find
 ==============
 
-Chrome extension that finds social media threads for a webpage. Inspired by [this](http://www.reddit.com/r/SomebodyMakeThis/comments/289trx/a_browser_extension_that_sucks_comments_from/) Reddit thread.
+Reddit Find is a lightweight extension indicating the presence of comment threads for any webpage, such as a news article, comic, or image. When the site you're browsing has been discussed on reddit, the extension icon turns blue, directly connecting you to others' comments on the topic.
 
-To install this extension, either locally clone the repo or download and extract the ZIP, then follow instructions [here](http://superuser.com/questions/247651/how-does-one-install-an-extension-for-chrome-browser-from-the-local-file-system).
+Inspired by [this](http://www.reddit.com/r/SomebodyMakeThis/comments/289trx/a_browser_extension_that_sucks_comments_from/) reddit thread.
+
+Chrome Web Store - [coming soon]
+reddit - http://www.reddit.com/r/RedditFind
